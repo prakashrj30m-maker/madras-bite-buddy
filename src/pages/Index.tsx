@@ -9,6 +9,12 @@ import { MenuCard } from "@/components/MenuCard";
 import { toast } from "sonner";
 import { Session } from "@supabase/supabase-js";
 import heroImage from "@/assets/hero-food.jpg";
+import masalaDosaImg from "@/assets/masala-dosa.jpg";
+import chickenBiryaniImg from "@/assets/chicken-biryani.jpg";
+import idliSambarImg from "@/assets/idli-sambar.jpg";
+import vegThaliImg from "@/assets/veg-thali.jpg";
+import samosaImg from "@/assets/samosa.jpg";
+import filterCoffeeImg from "@/assets/filter-coffee.jpg";
 
 const CATEGORIES = ["all", "breakfast", "lunch", "dinner", "snacks", "beverages"];
 
@@ -21,6 +27,7 @@ const MOCK_MENU_ITEMS = [
     category: "breakfast",
     diet_tags: ["veg"],
     prep_time_minutes: 15,
+    image_url: masalaDosaImg,
   },
   {
     id: "2",
@@ -30,6 +37,7 @@ const MOCK_MENU_ITEMS = [
     category: "lunch",
     diet_tags: ["non_veg"],
     prep_time_minutes: 25,
+    image_url: chickenBiryaniImg,
   },
   {
     id: "3",
@@ -39,6 +47,7 @@ const MOCK_MENU_ITEMS = [
     category: "breakfast",
     diet_tags: ["veg", "vegan"],
     prep_time_minutes: 10,
+    image_url: idliSambarImg,
   },
   {
     id: "4",
@@ -48,6 +57,7 @@ const MOCK_MENU_ITEMS = [
     category: "lunch",
     diet_tags: ["veg"],
     prep_time_minutes: 20,
+    image_url: vegThaliImg,
   },
   {
     id: "5",
@@ -57,6 +67,7 @@ const MOCK_MENU_ITEMS = [
     category: "snacks",
     diet_tags: ["veg"],
     prep_time_minutes: 5,
+    image_url: samosaImg,
   },
   {
     id: "6",
@@ -66,6 +77,7 @@ const MOCK_MENU_ITEMS = [
     category: "beverages",
     diet_tags: ["veg"],
     prep_time_minutes: 5,
+    image_url: filterCoffeeImg,
   },
 ];
 
@@ -239,6 +251,7 @@ export default function Index() {
                 price={item.price}
                 dietTags={item.diet_tags}
                 prepTime={item.prep_time_minutes}
+                imageUrl={item.image_url}
                 onAddToCart={handleAddToCart}
               />
             ))}
